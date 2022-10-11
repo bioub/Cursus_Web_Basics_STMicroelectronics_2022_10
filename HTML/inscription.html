@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <div class="form-group">
+      <h2>Nom</h2>
+      <div class="form-fields">
+        <input type="text" name="prenom" placeholder="Prénom">
+        <input type="text" name="nom" placeholder="Nom">
+      </div>
+    </div>
+    <div class="form-group">
+      <h2>Choisissez votre nom d'utilisateur</h2>
+      <div class="form-fields">
+        <input type="text" name="username" placeholder="@gmail.com">
+      </div>
+      <a class="form-link" href="#">
+        Je préfère utiliser mon adresse e-mail actuelle
+      </a>
+    </div>
+    <div class="form-group">
+      <h2>Créer un mot de passe</h2>
+      <div class="form-fields">
+        <input type="password" name="password">
+      </div>
+    </div>
+    <div class="form-group">
+      <h2>Confirmez votre mot de passe</h2>
+      <div class="form-fields">
+        <input type="password" name="password-confirmation">
+      </div>
+    </div>
+    <div class="form-group">
+      <h2>Date de naissance</h2>
+      <div class="form-fields">
+        <input type="text" name="birthday-day" placeholder="Jour">
+        <select name="birthday-month">
+          <option disabled selected>Mois</option>
+          <option value="01">Janvier</option>
+          <option value="02">Février</option>
+          <option value="03">Mars</option>
+        </select>
+        <input type="text" name="birthday-year" placeholder="Année">
+      </div>
+    </div>
+    <div class="form-group">
+      <h2>Sexe</h2>
+      <div class="form-fields">
+        <select name="sexe">
+          <option disabled selected>Je suis</option>
+          <option>Homme</option>
+          <option>Femme</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
