@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Tous les éléments
+    * {
+      border: 2px solid black;
+      padding: 5px;
+    }
+    */
+
+    /* Tous les paragraphes
+    p {
+      border: 2px solid black;
+      padding: 5px;
+    }
+    */
+
+    /* Tous les éléments dont l'une des classes est important
+    .important {
+      border: 2px solid black;
+      padding: 5px;
+    }
+     */
+
+    /*
+    Tous les éléments dont l'une des classes est test et dont le nom de balise est span
+    Comme un ET Logique (attention ce n'est pas pareil que span .test)
+    span.test {
+      border: 2px solid black;
+      padding: 5px;
+    }
+     */
+
+     /* ET la balise div ET la classe important ET la classe test
+     div.important.test {
+      border: 2px solid black;
+      padding: 5px;
+     }
+    */
+
+    /* dont l'id = two
+    #two {
+      border: 2px solid black;
+      padding: 5px;
+    }
+     */
+
+     /* div {
+      border: 2px solid black;
+      padding: 5px;
+     }
+
+     p {
+      border: 2px solid black;
+      padding: 5px;
+     } */
+
+     /* on peut passer plusieurs selecteurs en une ligne
+     div, p {
+      border: 2px solid black;
+      padding: 5px;
+     }
+      */
+
+      /* on peut passer plusieurs selecteurs en une ligne
+      #one, p {
+
+      }
+      */
+
+      /* le span dont un ancetre contient l'id=two
+      #two span {
+
+      } */
+
+      /* le ou les h2 dont le parent est l'id=one */
+      /* #one > h2 {
+        border: 2px solid black;
+      padding: 5px;
+      } */
+
+      /* tous les enfants de #one */
+      #one > * {
+
+      }
+
+      /* le p juste après le h2 (ils ont meme parent) */
+      /* h2 + p {
+
+      } */
+
+      /* le li juste après un li (ils ont meme parent)
+      -> tous les li sauf le premier
+      li + li {
+        border: 2px solid black;
+        padding: 5px;
+      }
+      */
+
+      /*
+      li:not(:nth-child(1)) {
+        border: 2px solid black;
+        padding: 5px;
+      }*/
+
+      /* li:nth-last-child(3) {
+        border: 2px solid black;
+        padding: 5px;
+      } */
+
+      /*
+      un li sur 4 (en fonction d'un meme parent) en commencant au 2e
+      li:nth-child(4n+2) {
+        border: 2px solid black;
+        padding: 5px;
+      } */
+
+      /* li:nth-child(2n+1) peut s'écrire li:nth-child(odd) */
+      /* li:nth-child(odd) {
+        border: 2px solid black;
+        padding: 5px;
+      } */
+
+      /* les li pairs
+      li:nth-child(even) {
+        border: 2px solid black;
+        padding: 5px;
+      }
+      */
+
+      /* le h2 à la position 3 d'un parent */
+      /* h2:nth-child(3) {
+        border: 2px solid black;
+        padding: 5px;
+      } */
+
+      /* le 2e h2 d'un parent */
+      /* h2:nth-of-type(2) {
+        border: 2px solid black;
+        padding: 5px;
+      } */
+
+      /* toutes les balises input dont l'attribut type est text */
+      /* input[type=text] {
+        border: 2px solid black;
+        padding: 5px;
+      } */
+
+      /* .test::after {
+        content: " : test"
+      } */
+
+      /* li::before {
+        content: ' / ';
+      } */
+  </style>
+</head>
+<body>
+  <div id="one" class="important big test">
+    <h2>Titre 1</h2>
+    <p>
+      Lorem ipsum dolor sit, <span class="test">amet</span> consectetur adipisicing elit. Voluptas, maiores saepe! Obcaecati id eligendi beatae, neque velit optio incidunt aliquam delectus quia ab ipsa laudantium magni dolorem, libero sapiente dolores?
+    </p>
+    <h2>Titre 2</h2>
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+      <li>item 5</li>
+      <li>item 6</li>
+      <li>item 7</li>
+    </ul>
+  </div>
+  <div id="two">
+    <h2>Titre 1</h2>
+    <p>
+      Lorem ipsum dolor sit, <span class="test">amet</span> consectetur adipisicing elit. Voluptas, maiores saepe! Obcaecati id eligendi beatae, neque velit optio incidunt aliquam delectus quia ab ipsa laudantium magni dolorem, libero sapiente dolores?
+    </p>
+    <h2>Titre 2</h2>
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+  </div>
+  <p id="three" class="important small">
+    Lorem ipsum dolor sit, <span class="test">amet</span> consectetur adipisicing elit. Voluptas, maiores saepe! Obcaecati id eligendi beatae, neque velit optio incidunt aliquam delectus quia ab ipsa laudantium magni dolorem, libero sapiente dolores?
+  </p>
+  <p id="four">
+    Lorem ipsum dolor sit, <span class="test">amet</span> consectetur adipisicing elit. Voluptas, maiores saepe! Obcaecati id eligendi beatae, neque velit optio incidunt aliquam delectus quia ab ipsa laudantium magni dolorem, libero sapiente dolores?
+  </p>
+</body>
+</html>

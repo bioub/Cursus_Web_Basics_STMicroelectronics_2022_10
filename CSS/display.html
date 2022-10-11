@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul.breadcrumb {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul.breadcrumb li {
+        display: inline;
+      }
+
+      ul.breadcrumb li + li::before {
+        content: ' / ';
+      }
+
+      ul.tabs {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul.tabs li {
+        display: inline-block;
+        padding: 5px;
+        border: 1px solid black;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 100px;
+      }
+
+      ul.tabs li:hover {
+        position: relative;
+        top: 10px;
+        /* margin-top: 10px; */
+      }
+
+      ul.tabs li + li {
+        /* margin-left: 5px; */
+      }
+
+      ul.tabs li a {
+        display: block;
+      }
+
+      .sidebar {
+        width: 300px;
+        background-color: orange;
+      }
+
+      .sidebar a {
+        display: block;
+        margin-bottom: 5px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="breadcrumb">
+      <li>
+        <a href="#">Link</a>
+      </li>
+      <li>
+        <a href="#">Link</a>
+      </li>
+      <li>
+        <a href="#">Link</a>
+      </li>
+    </ul>
+
+    <ul class="tabs">
+      <li>
+        <a href="#">Link</a>
+      </li>
+      <li>
+        <a href="#">Link</a>
+      </li>
+      <li>
+        <a href="#">Link</a>
+      </li>
+    </ul>
+
+    <nav class="sidebar">
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+    </nav>
+  </body>
+</html>
