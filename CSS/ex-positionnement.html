@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    :root {
+
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -74,7 +78,11 @@
       text-align: center;
       color: white;
       text-decoration: none;
-      transition: background-color linear 400ms;
+      transition: background-color linear 400ms 1s;
+      /* transition-property: background-color;
+      transition-timing-function: cubic-bezier(.02,.7,.62,.77);
+      transition-duration: 400ms;
+      transition-delay: 1s; */
     }
 
     .side-menu a:hover {
@@ -87,6 +95,7 @@
     }
 
     .gallery {
+      --gallery-gap: 9px;
       display: flex;
       flex-wrap: wrap;
       margin-top: 10px;
@@ -94,11 +103,27 @@
 
     .gallery > div {
       background-color: orange;
-      width: 30%;
+      width: calc((100% / 3) - (var(--gallery-gap) * 2 / 3));
       height: 100px;
-      margin-bottom: 10px;
-      margin-right: 10px;
+      margin-bottom: var(--gallery-gap);
+      margin-right: var(--gallery-gap);
+      cursor: pointer;
+    }
 
+    .gallery > div:nth-child(3n+3) {
+      margin-right: 0;
+    }
+
+    .helper {
+      opacity: 0;
+      transition: opacity ease 1s;
+      background-color: blue;
+    }
+
+    .gallery > div:hover .helper {
+      /* display: none; */
+      /* visibility: hidden; */
+      opacity: 1;
     }
   </style>
 </head>
@@ -130,7 +155,10 @@
           <a href="#">Produit</a>
         </nav>
         <div class="gallery">
-          <div>img</div>
+          <div>
+            img
+            <div class="helper">Message</div>
+          </div>
           <div>img</div>
           <div>img</div>
           <div>img</div>
