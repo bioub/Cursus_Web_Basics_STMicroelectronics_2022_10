@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      display: none;
+    }
+
+    @media (min-width: 799px) {
+      .large {
+        display: block;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .small {
+        display: block;
+      }
+    }
+
+
+    @media (orientation: landscape) {
+      .landscape {
+        display: block;
+      }
+    }
+
+    @media (orientation: portrait) {
+      .portrait {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="large">
+    Large screen
+  </div>
+  <div class="small">
+    Small screen
+  </div>
+  <div class="landscape">
+    Landscape
+  </div>
+  <div class="portrait">
+    Portrait
+  </div>
+</body>
+</html>
