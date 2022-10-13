@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*
+    1- Dans le HTML supprimer la balise main
+    (dans div class="container" il restera header, aside et div class="content")
+    2- Dans le CSS retirer le display flex du main (effacer les règles de main qui n'existe plus)
+    3- Dans le CSS au niveau du container dessiner une grille
+    2 colonnes: 1 de 300px de large, 1 du reste disponible
+    2 lignes: 1 de 100px de haut, 1 du reste disponible
+    4- Dans le CSS remplacer le display flex de la gallery
+    par une grille de 3 colonnes de largeurs égales avec un gap de 10px
+    et autant de ligne que nécessaire de hauteur 100px
+    (vous devrez effacer les largeur, hauteur et margers au niveau de .gallery > div)
+
+    :root {
+
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    /*
+    fluid design : largeur variable (dépend de la fenetre)
+    fixed design : largeur fixe
+    responsive design : largeur fixe qui dépend de la fenetre
+    */
+    .container {
+      width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    header {
+      color: white;
+      position: relative;
+      background-color: dodgerblue;
+      height: 100px;
+      padding: 10px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    .top-menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: green;
+      padding: 10px;
+    }
+
+    .top-menu-item:not(:last-child)::after {
+      content: ' / ';
+    }
+
+    main {
+      display: flex;
+    }
+
+    aside {
+      background-color: yellow;
+      width: 30%;
+    }
+
+    .side-menu a {
+      display: block;
+      margin: 0.4em 0;
+      background-color: orange;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      transition: background-color linear 400ms 1s;
+      /* transition-property: background-color;
+      transition-timing-function: cubic-bezier(.02,.7,.62,.77);
+      transition-duration: 400ms;
+      transition-delay: 1s; */
+    }
+
+    .side-menu a:hover {
+      background-color: red;
+    }
+
+    .content {
+      width: 70%;
+      padding: 10px;
+    }
+
+    .gallery {
+      --gallery-gap: 9px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .gallery > div {
+      background-color: orange;
+      width: calc((100% / 3) - (var(--gallery-gap) * 2 / 3));
+      height: 100px;
+      margin-bottom: var(--gallery-gap);
+      margin-right: var(--gallery-gap);
+      cursor: pointer;
+    }
+
+    .gallery > div:nth-child(3n+3) {
+      margin-right: 0;
+    }
+
+    .helper {
+      opacity: 0;
+      transition: opacity ease 1s;
+      background-color: blue;
+    }
+
+    .gallery > div:hover .helper {
+      /* display: none; */
+      /* visibility: hidden; */
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Titre</h1>
+      <nav class="top-menu">
+        <span class="top-menu-item">
+          <a href="#">Login</a>
+        </span>
+        <span class="top-menu-item">
+          <a href="#">Register</a>
+        </span>
+      </nav>
+    </header>
+    <main>
+      <aside>
+        <nav class="side-menu">
+          <a href="#">Lien 1</a>
+          <a href="#">Lien 2</a>
+          <a href="#">Lien 3</a>
+        </nav>
+      </aside>
+      <div class="content">
+        <nav class="breadcrumb-menu">
+          <a href="#">Home</a>
+          <a href="#">Catégorie</a>
+          <a href="#">Produit</a>
+        </nav>
+        <div class="gallery">
+          <div>
+            img
+            <div class="helper">Message</div>
+          </div>
+          <div>img</div>
+          <div>img</div>
+          <div>img</div>
+          <div>img</div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
