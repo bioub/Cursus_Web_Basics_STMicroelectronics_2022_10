@@ -3,9 +3,9 @@
 const names = ['John', 'Mary'];
 
 function hello(name) {
-  return 'Hello ' + name;
+  return `Hello ${name.toUpperCase()}`;
 }
 
-for (let i=0; i<names.length; i++) {
-  console.log(hello(names[i]));
+for (const n of names) {
+  console.log(hello(n));
 }
