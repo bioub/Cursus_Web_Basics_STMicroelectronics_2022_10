@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <button>Value 1</button>
+  <button>Value 2</button>
+  <button>Value 3</button>
+
+  <script>
+    // querySelector et querySelectorAll sélectionnent les élements du DOM
+    // avec des sélecteurs CSS
+    /** @type {NodeListOf<HTMLButtonElement>} */
+    const buttons = document.querySelectorAll('body > button');
+
+    for (const button of buttons) {
+      button.addEventListener('click', () => {
+        console.log(button.innerText);
+      });
+    }
+
+    // for (let i=0; i<3; i++) {
+    //   // portée de closure dans laquelle est déclarée i
+    //   setTimeout(function() {
+    //     console.log(i);
+    //   }, 1000);
+    // }
+
+  </script>
+</body>
+</html>

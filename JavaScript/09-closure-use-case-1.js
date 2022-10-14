@@ -21,3 +21,9 @@ for (var i=0; i<3; i++) {
 // B - ..1s.. 0 1 2
 // C - ..1s.. 3 3 3
 
+for (let i=0; i<3; i++) {
+  // portée de closure dans laquelle est déclarée i
+  setTimeout(function() {
+    console.log(i);
+  }, 1000);
+}

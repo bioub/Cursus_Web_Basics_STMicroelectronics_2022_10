@@ -2,6 +2,9 @@
 
 const names = ['John', 'Mary'];
 
+/**
+ * @param {string} name
+ */
 function hello(name) {
   return `Hello ${name.toUpperCase()}`;
 }

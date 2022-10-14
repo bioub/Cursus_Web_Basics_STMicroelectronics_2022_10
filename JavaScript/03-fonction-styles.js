@@ -1,5 +1,5 @@
 // function declaration (bonne pratique)
-function hello(name) {
+function hello2(name) {
   return `Hello ${name.toUpperCase()}`;
 }
 
