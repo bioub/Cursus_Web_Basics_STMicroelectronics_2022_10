@@ -37,12 +37,14 @@ console.log("typeof Math.sum", typeof Math.sum); // function
 console.log("Math.sum(1, 2)", Math.sum(1, 2)); // 3
 
 // modifier des clés/valeurs
+const originalRandom = Math.random;
 Math.random = () => 0.5;
 console.log("Math.random()", Math.random()); // 0.5
 
 // supprimer des clés/valeurs
 delete Math.random;
 console.log("typeof Math.random", typeof Math.random); // undefined
+Math.random = originalRandom;
 
 // Mauvaise pratique de modifier des objets qu'on a pas créé
 
@@ -58,21 +60,21 @@ const key = "LN2";
 console[method](Math[key]);
 
 // On peut boucler sur les objets avec for .. in
-for (const key in process) {
-  if (Object.hasOwnProperty.call(process, key)) {
-    const value = process[key];
-    console.log(key, value);
-  }
-}
+// for (const key in process) {
+//   if (Object.hasOwnProperty.call(process, key)) {
+//     const value = process[key];
+//     console.log(key, value);
+//   }
+// }
 
 // Convertir un object en un tableau de clés
-console.log(Object.keys(process));
+// console.log(Object.keys(process));
 
 // Convertir un object en un tableau de valeurs
-console.log(Object.values(process));
+// console.log(Object.values(process));
 
 // Convertir un object en un tableau de tableau [clé, valeur]
-console.log(Object.entries(process));
+// console.log(Object.entries(process));
 
 // Convertir le tableau de tableau [clé, valeur] en objet
 const coords = Object.fromEntries([

@@ -23,6 +23,7 @@
     const buttons = document.querySelectorAll('body > button');
 
     for (const button of buttons) {
+      // portée de closure (block créé par const)
       button.addEventListener('click', () => {
         console.log(button.innerText);
       });
