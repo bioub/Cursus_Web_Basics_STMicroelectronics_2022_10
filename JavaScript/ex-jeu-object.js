@@ -25,14 +25,20 @@ const readline = require("readline");
 // }
 
 class Jeu {
-  constructor(options = {}) {
-    const min = options.min ?? 0;
-    const max = options.max ?? 100;
+  constructor(options) {
+    // const min = options.min ?? 0;
+    // const max = options.max ?? 100;
+
+    this.min = options?.min ?? 0;
+    this.max = options?.max ?? 100;
+
+    // Object.assign(this, { min: 0, max: 100 }, options)
+
     this.rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout,
     });
-    this.entierAlea = Random.getRandomInt(min, max);
+    this.entierAlea = Random.getRandomInt(this.min, this.max);
     this.essais = [];
   }
   jouer() {

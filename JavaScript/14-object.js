@@ -166,3 +166,12 @@ console.log(romain.hello());
 const eric = new User('Eric');
 console.log('eric.name', eric.name);
 console.log(eric.hello());
+
+
+// ES2022 (class properties)
+class Utilisateur {
+  name = 'Romain';
+  hello() {
+    return `Hello ${this.name}`;
+  }
+}
