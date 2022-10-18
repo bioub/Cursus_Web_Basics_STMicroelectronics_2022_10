@@ -170,8 +170,8 @@ console.log(eric.hello());
 
 // ES2022 (class properties)
 class Utilisateur {
-  name = 'Romain';
+  #name = 'Romain';
   hello() {
-    return `Hello ${this.name}`;
+    return `Hello ${this.#name}`;
   }
 }

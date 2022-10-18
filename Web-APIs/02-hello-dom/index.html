@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DOM</title>
+</head>
+<body>
+  <div>Name : <input class="input"></div>
+  <p>Hello <span class="output"></span> !</p>
+  <script>
+    (function() {
+      'use strict';
+      /** @type {HTMLInputElement} */
+      const inputElt = document.querySelector('.input');
+
+      /** @type {HTMLSpanElement} */
+      const spanElt = document.querySelector('.output');
+
+      inputElt.addEventListener('input', () => {
+        spanElt.innerText = inputElt.value;
+      });
+    }());
+  </script>
+</body>
+</html>

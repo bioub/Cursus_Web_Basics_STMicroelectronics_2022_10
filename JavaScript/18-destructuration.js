@@ -33,7 +33,7 @@ const options = {
 // const min = options.min ?? 0;
 // const max = options.max ?? 100;
 
-//    { min: 10 , max: 20  }
+//       { min: 10 , max: 20  }
 // const { min: min, max: max } = options;
 // avec Shorthand property on peut raccourcir à
 // const { min, max } = options;

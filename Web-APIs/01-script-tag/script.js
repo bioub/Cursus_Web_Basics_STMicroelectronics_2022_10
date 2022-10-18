@@ -1,5 +1,11 @@
-const names = ['John', 'Mary'];
+// Module IIFE
+// Immediately Invoked Function Expression
+(function () {
+  'use strict';
 
-for (const n of names) {
-  console.log(hello(n));
-}
+  const names = ['John', 'Mary'];
+
+  for (const n of names) {
+    console.log(hello(n));
+  }
+}());
