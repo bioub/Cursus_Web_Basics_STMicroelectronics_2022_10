@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+      }
+
+      .cercle {
+        display: flex;
+        margin: auto;
+        border: 1px solid black;
+        border-radius: 50%;
+      }
+
+      .blanc {
+        background-color: white;
+      }
+
+      .noir {
+        background-color: black;
+      }
+
+      .bleu {
+        background-color: #64b5c5;
+      }
+
+      .rouge {
+        background-color: red;
+      }
+
+      .jaune {
+        background-color: yellow;
+      }
+
+      .c1 {
+        width: 100vmin;
+        height: 100vmin;
+        background-color: white;
+      }
+
+      .c2 {
+        width: 90vmin;
+        height: 90vmin;
+      }
+
+      .c3 {
+        width: 80vmin;
+        height: 80vmin;
+        background-color: black;
+      }
+
+      .c4 {
+        width: 70vmin;
+        height: 70vmin;
+        border-color: white;
+      }
+
+      .c5 {
+        width: 60vmin;
+        height: 60vmin;
+        background-color: #64b5c5;
+      }
+
+      .c6 {
+        width: 50vmin;
+        height: 50vmin;
+      }
+
+      .c7 {
+        width: 40vmin;
+        height: 40vmin;
+        background-color: red;
+      }
+
+      .c8 {
+        width: 30vmin;
+        height: 30vmin;
+      }
+
+      .c9 {
+        width: 20vmin;
+        height: 20vmin;
+        background-color: yellow;
+      }
+
+      .c10 {
+        width: 10vmin;
+        height: 10vmin;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cercle c1">
+      <div class="cercle c2">
+        <div class="cercle c3">
+          <div class="cercle c4">
+            <div class="cercle c5">
+              <div class="cercle c6">
+                <div class="cercle c7">
+                  <div class="cercle c8">
+                    <div class="cercle c9">
+                      <div class="cercle c10"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      /** @type {NodeListOf<HTMLDivElement>} */
+      const cercleEls = document.querySelectorAll(".cercle");
+
+      // window.addEventListener("click", () => {
+      //   console.log("click", "window");
+      // });
+
+      // document.addEventListener("click", () => {
+      //   console.log("click", "document");
+      // });
+
+      // document.documentElement.addEventListener("click", () => {
+      //   console.log("click", "html");
+      // });
+
+      // document.body.addEventListener("click", () => {
+      //   console.log("click", "body");
+      // });
+
+      // for (const cercleEl of cercleEls) {
+      //   cercleEl.addEventListener("click", () => {
+      //     console.log("click", cercleEl.className);
+      //   });
+      // }
+
+
+
+      document.body.addEventListener('click', (event) => {
+        /** @type {HTMLElement} */
+        const target = event.target;
+
+        // console.log('target', event.target);
+        // console.log('currentTarget', event.currentTarget);
+
+        if (target.classList.contains('c10')) {
+          console.log('centre de la cible')
+        }
+      });
+    </script>
+  </body>
+</html>

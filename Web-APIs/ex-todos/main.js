@@ -7,6 +7,9 @@ const inputEl = document.querySelector('.todos-form-input');
 /** @type {HTMLDivElement} */
 const listEl = document.querySelector('.todos-list');
 
+/** @type {HTMLInputElement} */
+const toggleEl = document.querySelector('.todos-form-toggle');
+
 formEl.addEventListener('submit', (event) => {
   // preventDefault empêche l'action par défaut
   // qui est d'aller vers la destination du form
@@ -36,4 +39,11 @@ au début du formulaire
 Au clic de celle-ci, cocher ou décocher toutes les
 checkbox de la liste
 */
+toggleEl.addEventListener('click', () => {
+  /** @type {NodeListOf<HTMLInputElement>} */
+  const checkboxes = listEl.querySelectorAll('input[type="checkbox"]');
 
+  for (const checkbox of checkboxes) {
+    checkbox.checked = toggleEl.checked;
+  }
+});

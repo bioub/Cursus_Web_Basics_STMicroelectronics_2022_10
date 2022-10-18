@@ -31,10 +31,38 @@ function createTodoItem(todo) {
   itemEl.className = "todos-item";
   itemEl.dataset.todoId = todo.id;
 
+  const checkboxEl = document.createElement('input');
+  checkboxEl.type = 'checkbox';
+  checkboxEl.checked = todo.completed;
+
   const spanEl = document.createElement('span');
   spanEl.innerText = todo.title;
 
-  itemEl.append(spanEl);
+  const buttonEl = document.createElement('button');
+  buttonEl.innerText = '-';
+
+  /*
+  Exercice 4
+  En s'inspirant de 03-events/propagation.html
+  Retirer le code suivant : buttonEl.addEventListener(...)
+  Ecouter le click de listEl dans main.js
+  Avec event.target tester si le click a été fait sur un bouton -
+  Si oui supprimer l'élément parent
+  */
+  buttonEl.addEventListener('click', () => {
+    itemEl.remove();
+  });
+
+  itemEl.append(checkboxEl, ' ', spanEl, ' ', buttonEl);
 
   return itemEl;
 }
+
+// pile d'appel
+// ^
+// |
+// |
+// |                                                       lg
+// |createTodoItem - createTodoItem                        taskClick2
+// +-------------------------------------------------------(clic)----> temps
+//

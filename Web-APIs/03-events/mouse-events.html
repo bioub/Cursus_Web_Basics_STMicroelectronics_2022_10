@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+      }
+
+      .cercle {
+        margin: auto;
+        border: 1px solid black;
+        border-radius: 50%;
+      }
+
+      .externe {
+        display: flex;
+        width: 200px;
+        height: 200px;
+      }
+
+      .interne {
+        margin: auto;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cercle externe">
+      <div class="cercle interne"></div>
+    </div>
+    <script>
+      const eventTypes = [
+        "auxclick",
+        "contextmenu",
+        "click",
+        "dblclick",
+        "mousedown",
+        "mouseenter",
+        "mouseleave",
+        // "mousemove",
+        "mouseout",
+        "mouseover",
+        "mouseup",
+      ];
+
+      const externeEl = document.querySelector('.externe');
+      const interneEl = document.querySelector('.interne');
+
+      for (const eventType of eventTypes) {
+        externeEl.addEventListener(eventType, (event) => {
+          console.log(event);
+          console.log(eventType);
+          console.log(event.clientX);
+          console.log(event.clientY);
+        });
+      }
+    </script>
+  </body>
+</html>
