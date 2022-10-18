@@ -14,6 +14,19 @@ function createTodoItem(todo) {
   </div>
   */
 
+  /*
+  Exercice 1
+  Compléter cette fonction de sorte à :
+  - créer la checkbox (doit être coché si todo.completed === true)
+  - créer le bouton <button>-</button>
+  */
+
+  /*
+  Exercice 2
+  Au clic du bouton <button>-</button>
+  Supprimer balise <div class="todos-item"> correspondante
+  */
+
   const itemEl = document.createElement('div');
   itemEl.className = "todos-item";
   itemEl.dataset.todoId = todo.id;
