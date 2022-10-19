@@ -71,10 +71,14 @@
         top: 0;
         right: 0;
       }
+
+      .invalid {
+        border: 2px solid red;
+      }
     </style>
   </head>
   <body>
-    <form>
+    <form class="registration-form">
       <div class="form-group">
         <h2>Nom</h2>
         <div class="form-fields">
@@ -86,7 +90,6 @@
         <h2>Choisissez votre nom d'utilisateur</h2>
         <div class="form-fields with-placeholder">
           <input type="text" name="username" />
-          <span class="placeholder">@gmail.com</span>
         </div>
         <a class="form-link" href="#">
           Je préfère utiliser mon adresse e-mail actuelle
@@ -127,6 +130,7 @@
           </select>
         </div>
       </div>
+      <button>Register</button>
     </form>
     <script>
       // Exercice
@@ -139,6 +143,60 @@
 
       // Afficher un message au début du formulaire avec les erreurs (ou après chaque champs)
       // les champs qui sont en erreurs doit apparaitre en rouge (border: 2px solid red)
+
+      /** @type {HTMLFormElement} */
+      const formEl = document.querySelector('.registration-form');
+
+      formEl.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // RESET FORM
+        const oldDivErrors = document.querySelector('.errors');
+        oldDivErrors?.remove(); // Optionnal Chaining (ES2020) -> si oldDivErrors vaut null, on exécute pas remove()
+
+        const invalidInputs = document.querySelectorAll('.invalid');
+        for (const invalidInput of invalidInputs) {
+          invalidInput.classList.remove('invalid');
+        }
+
+        const errors = [];
+
+        const prenomEl = formEl['prenom'];
+        const usernameEl = formEl['username'];
+        const passwordEl = formEl['password'];
+        const passwordConfirm = formEl['password-confirmation'];
+        const birthdayYear = formEl['birthday-year'];
+
+        if (prenomEl.value === '') {
+          errors.push('Le prénom est obligatoire');
+          prenomEl.classList.add('invalid');
+        }
+
+        if (!usernameEl.value.includes('@')) {
+          errors.push('Le username ne contient pas de @');
+          usernameEl.classList.add('invalid');
+        }
+
+        if (passwordEl.value !== passwordConfirm.value) {
+          errors.push('Le mot de passe et sa confirmation ne correspondent pas');
+          passwordEl.classList.add('invalid');
+          passwordConfirm.classList.add('invalid');
+        }
+
+        const actualYear = (new Date).getFullYear();
+        const year = Number(birthdayYear.value);
+
+        if (year > actualYear || year < actualYear - 120) {
+          errors.push(`L'année doit être comprise entre ${actualYear-120} et ${actualYear}`);
+          birthdayYear.classList.add('invalid');
+        }
+
+        const divErrors = document.createElement('div');
+        divErrors.className = 'errors';
+
+        divErrors.innerHTML = errors.join('<br>');
+        formEl.prepend(divErrors);
+      })
     </script>
   </body>
 </html>
