@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #1f1f1f;
+      }
+
+      a {
+        color: cornflowerblue;
+        text-decoration: none;
+      }
+
+      form {
+        background-color: #efefef;
+        width: 400px;
+        margin: 0 auto; /* margin-left+right: auto; */
+        padding: 10px;
+      }
+
+      form h2 {
+        font-size: 1.2em;
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+
+      .form-group {
+
+      }
+
+      .form-group:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      .form-group .form-fields {
+        margin-bottom: 5px;
+      }
+
+      .form-group input, .form-group select {
+        width: 100%;
+      }
+
+      .form-group input[name="prenom"], .form-group input[name="nom"] {
+        width: 49%;
+      }
+
+      .form-group [name^="birthday-"] {
+        width: 32.5%;
+      }
+
+      /* [name="username"]::after {
+        content: '@gmail.com';
+        color: grey;
+      } */
+
+      .with-placeholder {
+        position: relative;
+      }
+
+      .placeholder {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div class="form-group">
+        <h2>Nom</h2>
+        <div class="form-fields">
+          <input type="text" name="prenom" placeholder="Prénom" />
+          <input type="text" name="nom" placeholder="Nom" />
+        </div>
+      </div>
+      <div class="form-group">
+        <h2>Choisissez votre nom d'utilisateur</h2>
+        <div class="form-fields with-placeholder">
+          <input type="text" name="username" />
+          <span class="placeholder">@gmail.com</span>
+        </div>
+        <a class="form-link" href="#">
+          Je préfère utiliser mon adresse e-mail actuelle
+        </a>
+      </div>
+      <div class="form-group">
+        <h2>Créer un mot de passe</h2>
+        <div class="form-fields">
+          <input type="password" name="password" />
+        </div>
+      </div>
+      <div class="form-group">
+        <h2>Confirmez votre mot de passe</h2>
+        <div class="form-fields">
+          <input type="password" name="password-confirmation" />
+        </div>
+      </div>
+      <div class="form-group">
+        <h2>Date de naissance</h2>
+        <div class="form-fields">
+          <input type="text" name="birthday-day" placeholder="Jour" />
+          <select name="birthday-month">
+            <option disabled selected>Mois</option>
+            <option value="01">Janvier</option>
+            <option value="02">Février</option>
+            <option value="03">Mars</option>
+          </select>
+          <input type="text" name="birthday-year" placeholder="Année" />
+        </div>
+      </div>
+      <div class="form-group">
+        <h2>Sexe</h2>
+        <div class="form-fields">
+          <select name="sexe">
+            <option disabled selected>Je suis</option>
+            <option>Homme</option>
+            <option>Femme</option>
+          </select>
+        </div>
+      </div>
+    </form>
+    <script>
+      // Exercice
+      // Valider ce formulaire au submit selon les règles suivantes
+      // - le prénom est obligatoire
+      // - l'email doit contenir un @ (bonus avec un regex)
+      // - le mot de passe et la répétition du mot de passe correspondent
+      // - l'année est comprise entre l'année actuelle et 120 années avant la date actuelle
+      // (new Date).getFullYear();
+
+      // Afficher un message au début du formulaire avec les erreurs (ou après chaque champs)
+      // les champs qui sont en erreurs doit apparaitre en rouge (border: 2px solid red)
+    </script>
+  </body>
+</html>

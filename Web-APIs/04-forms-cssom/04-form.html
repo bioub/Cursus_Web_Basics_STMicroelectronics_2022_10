@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="register" novalidate>
+    <p>
+      Prénom : <input type="text" name="prenom" required pattern="[a-z]+">
+    </p>
+    <p>
+      Nom : <input type="text" name="nom" minlength="2" maxlength="10">
+    </p>
+    <p>
+      Active : <input type="checkbox" name="active">
+    </p>
+    <button>+</button>
+  </form>
+  <script>
+    const registrationFormEl = document.forms['register'];
+
+    console.log(registrationFormEl.prenom);
+    console.log(registrationFormEl[0]);
+
+    // registrationFormEl.prenom.addEventListener('beforeinput', () => {
+    //   console.log('beforeinput');
+    // });
+
+    // registrationFormEl.prenom.addEventListener('input', () => {
+    //   console.log('input')
+    // });
+
+    // registrationFormEl.prenom.addEventListener('focus', () => {
+    //   console.log('focus')
+    // });
+
+    // registrationFormEl.prenom.addEventListener('blur', () => {
+    //   console.log('blur')
+    // });
+
+    registrationFormEl.addEventListener('beforeinput', () => {
+      console.log('beforeinput');
+    });
+
+    registrationFormEl.addEventListener('input', () => {
+      console.log('input')
+    });
+
+    registrationFormEl.addEventListener('focusin', () => {
+      console.log('focusin')
+    });
+
+    registrationFormEl.addEventListener('focusout', () => {
+      console.log('focusout')
+    });
+
+    registrationFormEl.addEventListener('submit', (event) => {
+      event.preventDefault();
+    })
+  </script>
+</body>
+</html>
