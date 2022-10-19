@@ -109,44 +109,16 @@
       </div>
     </div>
     <script>
-      /** @type {NodeListOf<HTMLDivElement>} */
-      const cercleEls = document.querySelectorAll(".cercle");
+      // /** @type {NodeListOf<HTMLDivElement>} */
+      // const cercleEls = document.querySelectorAll(".cercle");
 
-      // window.addEventListener("click", () => {
-      //   console.log("click", "window");
-      // });
-
-      // document.addEventListener("click", () => {
-      //   console.log("click", "document");
-      // });
-
-      // document.documentElement.addEventListener("click", () => {
-      //   console.log("click", "html");
-      // });
-
-      // document.body.addEventListener("click", () => {
-      //   console.log("click", "body");
-      // });
+      // let translate = 0;
 
       // for (const cercleEl of cercleEls) {
-      //   cercleEl.addEventListener("click", () => {
-      //     console.log("click", cercleEl.className);
-      //   });
+      //   cercleEl.style.transform = `translateY(${translate}px)`;
+      //   translate += 10;
       // }
 
-
-
-      document.body.addEventListener('click', (event) => {
-        /** @type {HTMLElement} */
-        const target = event.target;
-
-        // console.log('target', event.target);
-        // console.log('currentTarget', event.currentTarget);
-
-        if (target.classList.contains('c10')) {
-          console.log('centre de la cible')
-        }
-      });
     </script>
   </body>
 </html>

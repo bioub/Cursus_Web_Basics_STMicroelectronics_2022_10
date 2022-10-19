@@ -47,3 +47,12 @@ toggleEl.addEventListener('click', () => {
     checkbox.checked = toggleEl.checked;
   }
 });
+
+listEl.addEventListener('click', (event) => {
+  /** @type {HTMLElement} */
+  const target = event.target;
+
+  if (target.classList.contains('todos-delete')) {
+    target.closest('.todos-item').remove();
+  }
+});

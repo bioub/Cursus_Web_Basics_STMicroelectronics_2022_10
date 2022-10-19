@@ -15,15 +15,18 @@
         width: 100vw;
         height: 100vh;
         display: flex;
-        transform: rotateX(85deg);
       }
 
       .cercle {
         display: flex;
         margin: auto;
-        border: 4px solid black;
+        border: 1px solid black;
         border-radius: 50%;
-        transform: translateY(200px);
+        transition: background-color ease 1s;
+      }
+
+      .cercle.selected {
+        background-color: green;
       }
 
       .c1 {
@@ -109,43 +112,18 @@
       </div>
     </div>
     <script>
-      /** @type {NodeListOf<HTMLDivElement>} */
-      const cercleEls = document.querySelectorAll(".cercle");
-
-      // window.addEventListener("click", () => {
-      //   console.log("click", "window");
-      // });
-
-      // document.addEventListener("click", () => {
-      //   console.log("click", "document");
-      // });
-
-      // document.documentElement.addEventListener("click", () => {
-      //   console.log("click", "html");
-      // });
-
-      // document.body.addEventListener("click", () => {
-      //   console.log("click", "body");
-      // });
-
-      // for (const cercleEl of cercleEls) {
-      //   cercleEl.addEventListener("click", () => {
-      //     console.log("click", cercleEl.className);
-      //   });
-      // }
-
-
-
       document.body.addEventListener('click', (event) => {
+        const previousSelected = document.querySelector('.selected');
+
+        if (previousSelected) {
+          previousSelected.classList.remove('selected');
+        }
+
         /** @type {HTMLElement} */
         const target = event.target;
+        target.classList.add('selected');
 
-        // console.log('target', event.target);
-        // console.log('currentTarget', event.currentTarget);
 
-        if (target.classList.contains('c10')) {
-          console.log('centre de la cible')
-        }
       });
     </script>
   </body>

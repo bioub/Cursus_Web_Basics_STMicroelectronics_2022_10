@@ -40,6 +40,7 @@ function createTodoItem(todo) {
 
   const buttonEl = document.createElement('button');
   buttonEl.innerText = '-';
+  buttonEl.className = 'todos-delete';
 
   /*
   Exercice 4
@@ -49,9 +50,9 @@ function createTodoItem(todo) {
   Avec event.target tester si le click a été fait sur un bouton -
   Si oui supprimer l'élément parent
   */
-  buttonEl.addEventListener('click', () => {
-    itemEl.remove();
-  });
+  // buttonEl.addEventListener('click', () => {
+  //   itemEl.remove();
+  // });
 
   itemEl.append(checkboxEl, ' ', spanEl, ' ', buttonEl);
 
