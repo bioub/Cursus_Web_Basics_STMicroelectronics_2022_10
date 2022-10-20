@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"name": "HTML",
+			"path": "HTML"
+		},
+		{
+			"name": "CSS",
+			"path": "CSS"
+		},
+		{
+			"name": "JavaScript",
+			"path": "JavaScript"
+		},
+		{
+			"name": "Web-APIs",
+			"path": "Web-APIs"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Web-APIs"
+	}
+}

@@ -56,3 +56,22 @@ listEl.addEventListener('click', (event) => {
     target.closest('.todos-item').remove();
   }
 });
+
+
+fetchTodos().then((todos) => {
+  for (const todo of todos) {
+    const itemEl = createTodoItem(todo);
+    listEl.append(itemEl);
+  }
+})
+
+
+inputEl.addEventListener('input', () => {
+  localStorage.setItem('todo-input', inputEl.value);
+});
+
+const previousTodoInput = localStorage.getItem('todo-input');
+
+if (previousTodoInput) {
+  inputEl.value = previousTodoInput;
+}

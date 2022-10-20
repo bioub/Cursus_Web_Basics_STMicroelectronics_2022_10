@@ -20,9 +20,10 @@
     <button>+</button>
   </form>
   <script>
-    const registrationFormEl = document.forms['register'];
+    const registrationFormEl = document.forms['register']; // document.forms.register
 
     console.log(registrationFormEl.prenom);
+    console.log(registrationFormEl['prenom']);
     console.log(registrationFormEl[0]);
 
     // registrationFormEl.prenom.addEventListener('beforeinput', () => {
