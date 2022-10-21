@@ -15,6 +15,9 @@
 		{
 			"name": "Web-APIs",
 			"path": "Web-APIs"
+		},
+		{
+			"path": "Correction-Projet"
 		}
 	],
 	"settings": {
